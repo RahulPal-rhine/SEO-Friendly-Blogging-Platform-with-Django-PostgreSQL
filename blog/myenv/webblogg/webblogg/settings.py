@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-5#6#5$6#b9*z-n=ewc58w^keb@zr_xgck036*nrcmg*(ny8xv7'
+SECRET_KEY = 'use your secret key'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -72,9 +72,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'webblogg.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/5.2/ref/settings/#databases
-# rhine@pg3329
+
 DATABASES = {
     'default': {
         # 'ENGINE': 'django.db.backends.sqlite3',
@@ -82,7 +80,7 @@ DATABASES = {
         # 'NAME': BASE_DIR / 'db.sqlite3',
         'NAME': 'blog_db',
         'USER': 'postgres',
-        'PASSWORD':'rhine@pg3329',
+        'PASSWORD':'password',
         'HOST':'localhost',
         'PORT': '5432'
         
@@ -107,8 +105,7 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-#rahul_pal username
-#password rahul12@Django
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/

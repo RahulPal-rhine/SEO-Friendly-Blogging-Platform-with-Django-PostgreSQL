@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{ article.title }}</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    .dropcap {
+      float: left;
+      font-size: 4rem;
+      line-height: 1;
+      margin-right: 0.6rem;
+      margin-top: 0.3rem;
+    }
+  </style>
+</head>
+
+<body class="bg-[#faf9f7] text-gray-900 font-serif">
+
+<!-- HERO -->
+<header
+  class="h-[55vh] flex items-center justify-center text-center px-6
+         bg-gradient-to-br from-[#d9e4dd] to-[#efe6f7]">
+  <h1 class="text-5xl md:text-7xl max-w-4xl">
+    {{ article.title }}
+  </h1>
+</header>
+
+<!-- META -->
+<section class="max-w-4xl mx-auto px-6 mt-16">
+  <div class="flex justify-between border-b pb-6 text-sm uppercase text-gray-500">
+    <span>{{ article.published_date }}</span>
+    <span>Share ↓</span>
+  </div>
+
+  <div class="mt-10">
+    <p class="text-3xl">by {{ article.author }}</p>
+    <p class="text-gray-400">{{ article.handle }}</p>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<article class="max-w-2xl mx-auto px-6 mt-16 text-xl leading-relaxed space-y-10">
+
+  {% for paragraph in article.body.splitlines %}
+    {% if forloop.first %}
+      <p>
+        <span class="dropcap">{{ paragraph|slice:":1" }}</span>{{ paragraph|slice:"1:" }}
+      </p>
+    {% else %}
+      <p>{{ paragraph }}</p>
+    {% endif %}
+  {% endfor %}
+
+</article>
+
+<footer class="mt-32 text-center text-sm text-gray-400">
+  Educational content only. Not investment advice.
+</footer>
+
+</body>
+</html>

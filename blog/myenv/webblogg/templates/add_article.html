@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add New Article</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#faf9f7] py-20">
+    <main class="max-w-2xl mx-auto bg-white p-10 border border-gray-200">
+        <h1 class="text-3xl font-serif mb-8 text-center">New Publication</h1>
+
+        <form method="POST" class="space-y-4">
+            {% csrf_token %} {{ form.as_p }}
+
+            <div class="pt-6">
+                <button type="submit" class="w-full bg-black text-white py-3 uppercase text-sm tracking-widest hover:bg-gray-800 transition">
+                    Save to Database
+                </button>
+            </div>
+        </form>
+        
+        <p class="mt-6 text-center">
+            <a href="{% url 'article_list' %}" class="text-gray-400 hover:text-black text-sm">← Back to Dashboard</a>
+        </p>
+    </main>
+</body>
+</html>
